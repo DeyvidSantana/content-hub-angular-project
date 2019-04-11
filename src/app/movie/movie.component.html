@@ -1,6 +1,7 @@
 <div class="col-12">
   <div class="card-columns">
     <div class="card bg-dark text-white"  (click)="goEdit(movie)" *ngFor="let movie of movies">
+      <!--<a routerLink="filmes/detalhe/{{ movie.id }}"></a>-->
       <img class="card-img" src="https://image.tmdb.org/t/p/w500_and_h282_face/{{ movie.backdrop_path }}"
         alt="_blank" />
       <div class="card-img-overlay">

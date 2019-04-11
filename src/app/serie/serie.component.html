@@ -1,3 +1,12 @@
-<p>
-  serie works!
-</p>
+<div class="col-12">
+  <div class="card-columns">
+    <div class="card bg-dark text-white"  (click)="goEdit(serie)" *ngFor="let serie of series">    
+      <img class="card-img" src="https://image.tmdb.org/t/p/w500_and_h282_face/{{ serie.backdrop_path }}"
+        alt="_blank" />
+      <div class="card-img-overlay">
+        <div></div><p align="left" class="card-title">{{ serie.name }}</p>
+        <p class="card-title">{{ serie.vote_count }} votos</p>
+      </div>
+    </div>
+  </div>
+</div>
