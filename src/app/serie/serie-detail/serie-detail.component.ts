@@ -20,6 +20,8 @@ export class SerieDetailComponent implements OnInit {
       this._serieService.getById(id)
         .subscribe(response => {
           this.movie = response;
+          console.log(this.movie);
+          
         })
     });
   }

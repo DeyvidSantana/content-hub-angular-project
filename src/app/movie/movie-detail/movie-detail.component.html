@@ -8,7 +8,7 @@
   <div class="col-12 col-md-7">
     <div class="card">
       <div class="card-header">
-        <h5 class="card-title">{{ movie?.title }} ({{ movie?.release_date | date: 'yyyy'}})</h5>
+        <h5 class="card-title">{{ movie?.title }} ({{ movie?.release_date | date: 'yyyy'}})</h5>                    
       </div>
       <div class="card-body">
         <p class="card-title text-justify"><strong>Sinopse:</strong> {{ movie?.overview }}</p>
@@ -21,6 +21,10 @@
         <div class="d-inline-block" *ngFor="let company of movie?.production_companies">
           <img src="https://image.tmdb.org/t/p/w50_and_h50_bestv2{{ company.logo_path }}" class="img-thumbnail"
             alt="">&nbsp;
+        </div>
+        <br/> <br/>
+        <div class="d-inline-block">              
+            <button type="button" class="btn btn-primary" [routerLink]="['editar', movie.id, 'movie']">Editar Filme</button>           
         </div>
       </div>
     </div>

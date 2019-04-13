@@ -1,3 +1,6 @@
+import { SerieService } from './serie/serie.service';
+import { MovieService } from './movie/movie.service';
+import { EditComponent } from './edit/edit.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,7 +21,8 @@ import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +36,8 @@ import { LoginComponent } from './login/login.component';
   providers: [
     AccountService,
     AccountGuard,
+    MovieService,
+    SerieService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
 

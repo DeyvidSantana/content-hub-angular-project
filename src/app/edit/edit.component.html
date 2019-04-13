@@ -1,0 +1,67 @@
+<div class="container"> 
+    
+    <div class="col-lg-12">  
+        <form (ngSubmit)="onSubmit()" role="form" [formGroup]="editForm">
+          <legend *ngIf="(type == 'movie')"><strong>Filme {{ movieOrSerie.title }}</strong></legend>
+          <legend *ngIf="(type == 'series')"><strong>Editar Série {{ movieOrSerie.name }}</strong></legend>
+
+            <div class="row">
+                <div class="col-lg-3"> 
+                    <div class="form-group">
+                        <label><strong>Título Original</strong></label>
+                        <input type="text" class="form-control" formControlName="original_title">
+                        <div *ngIf="submitted && f.original_title.errors" class="invalid-feedback">
+                            <div *ngIf="f.original_title.errors.required">O campo senha deve ser preenchido</div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <label><strong>Título</strong></label>
+                        <input type="text" class="form-control" formControlName="title">
+                        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                            <div *ngIf="f.title.errors.required">O campo senha deve ser preenchido</div>
+                        </div>
+                    </div>
+                </div>   
+
+                <div class="col-lg-3">  
+                    <div class="form-group">
+                        <label><strong>Idioma Original</strong></label>
+                        <input type="text" class="form-control" formControlName="original_language">
+                        <div *ngIf="submitted && f.original_language.errors" class="invalid-feedback">
+                            <div *ngIf="f.original_language.errors.required">O campo senha deve ser preenchido</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">  
+                    <div class="form-group">
+                        <label><strong>Popularidade</strong></label>
+                        <input type="text" class="form-control" formControlName="popularity">
+                        <div *ngIf="submitted && f.popularity.errors" class="invalid-feedback">
+                            <div *ngIf="f.popularity.errors.required">O campo senha deve ser preenchido</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <div class="form-group">
+            <label><strong>Sinopse</strong></label>
+            <textarea class="form-control" rows="3" formControlName="overview"></textarea>
+          </div>
+          
+          <div align="right">                             
+              <div class="col-lg-3">                  
+                  <button type="submit" class="btn btn-primary form-control">Editar</button>                  
+              </div>                               
+          </div>
+          
+        </form>
+    </div>
+
+    <div align="center">
+        <div *ngIf="loading">
+            Editando  <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />               
+        </div>
+    </div>    
+</div>

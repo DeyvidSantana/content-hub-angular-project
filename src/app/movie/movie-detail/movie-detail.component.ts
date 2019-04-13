@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { MovieService } from '../movie.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -10,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class MovieDetailComponent implements OnInit {
 
   constructor(private _activatedRoute: ActivatedRoute,
+    private _router: Router,
     private _movieService: MovieService) { }
     
   movie = {}
@@ -19,9 +21,11 @@ export class MovieDetailComponent implements OnInit {
 
       this._movieService.getById(id)
         .subscribe(response => {
-          this.movie = response;
+          this.movie = response; 
+          console.log(this.movie);                   
         })
     });
+    
   }
 
 }
