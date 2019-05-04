@@ -17,7 +17,9 @@ export class MovieComponent implements OnInit {
   ngOnInit() {
     this._movieService.getDiscover().subscribe(
       response => {
-        this.movies = response['results'];
+        this.movies = response['content'];
+        console.log(this.movies);
+        
       }
     )
   }

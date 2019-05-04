@@ -8,10 +8,13 @@
   <div class="navbar-nav-scroll" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}" id="navbarNavDropdown" *ngIf="logged"> 
     <ul class="navbar-nav flex-row">
       <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['/filmes']" (click)="navbarCollapsed = true">Filmes</a>
+        <a class="nav-link" [routerLink]="['/movies']" (click)="navbarCollapsed = true">Movies</a>
       </li>
       <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['/series']" (click)="navbarCollapsed = true">Series</a>
+        <a class="nav-link" [routerLink]="['/tvs']" (click)="navbarCollapsed = true">TVs</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/people']" (click)="navbarCollapsed = true">People</a>
       </li>
     </ul>
   </div>

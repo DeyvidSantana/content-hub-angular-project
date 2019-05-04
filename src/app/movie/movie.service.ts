@@ -9,9 +9,8 @@ export class MovieService extends BaseService {
     super(httpClient);
   }
 
-
-  getDiscover() {
-    return this._httpClient.get(`${this.URL}discover/movie?language=pt-BR`)
+  getDiscover() {    
+    return this._httpClient.get(`${this.URL}program/movies/`)
   }
 
   getById(id: string) {

@@ -1,3 +1,4 @@
+import { PeopleService } from './people/people.service';
 import { SerieService } from './serie/serie.service';
 import { MovieService } from './movie/movie.service';
 import { EditComponent } from './edit/edit.component';
@@ -15,8 +16,6 @@ import { AccountGuard } from './guards/account.guard';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
 import { LoginComponent } from './login/login.component';
-
-
 
 @NgModule({
   declarations: [
@@ -38,6 +37,7 @@ import { LoginComponent } from './login/login.component';
     AccountGuard,
     MovieService,
     SerieService,
+    PeopleService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
 

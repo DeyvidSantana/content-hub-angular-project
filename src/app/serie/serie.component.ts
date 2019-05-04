@@ -11,12 +11,14 @@ export class SerieComponent implements OnInit {
   constructor(private _serieService: SerieService,
     private _router: Router) { }
 
-  series = [];
+  tvs = [];
 
   ngOnInit() {
     this._serieService.getDiscover().subscribe(
       response => {
-        this.series = response['results'];
+        this.tvs = response['content'];
+        console.log(this.tvs);
+        
       }
     )
   }
