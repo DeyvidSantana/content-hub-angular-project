@@ -1,6 +1,26 @@
+<div> 
+  <form>
+    <div class="row">
+      <div class="col-8">
+        <div class="form-group"> 
+          <label>Search movies:</label> 
+          <input type="text" (input)="findMovieByTitle($event.target.value)" name="" id="" placeholder="Type your search here..." class="form-control" required="required">
+        </div>
+      </div> 
+
+      <div class="col-4">
+        <label>Search for:</label>
+        <select name="" id="" class="form-control" required="required">
+          <option *ngFor="let search of searches" [value]="search">{{ search }}</option>
+        </select>      
+      </div>
+    </div>
+  </form>
+</div> 
+
 <div class="col-12">
   <div class="card-columns">
-    <div class="card bg-dark text-white" (click)="goEdit(movie)" *ngFor="let movie of movies">
+    <div class="card bg-dark text-white" (click)="showDetails(movie)" *ngFor="let movie of movies">
      <img class="card-img"
           src="https://image.tmdb.org/t/p/w250_and_h141_face{{ movie.backdropPath }}" alt="_blank" />
       <div class="card-img-overlay">

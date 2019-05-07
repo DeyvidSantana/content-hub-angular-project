@@ -14,17 +14,27 @@ export class SerieComponent implements OnInit {
   tvs = [];
 
   ngOnInit() {
-    this._serieService.getDiscover().subscribe(
-      response => {
-        this.tvs = response['content'];
-        console.log(this.tvs);
-        
-      }
-    )
+    this.getAllTvs();
   }
 
   goEdit(serie) {
     this._router.navigate(['series/detalhes', serie.id])
   }
+
+  getAllTvs(){
+    this._serieService.getDiscover().subscribe(
+      response => {
+        this.tvs = response['content'];               
+        console.log(this.tvs);
+      }
+    )
+  }
+
+  showDetails(tv) {
+    console.log(tv);  
+    this._router.navigate(['/tvs/', tv.id]);
+  }
+
+  
 
 }

@@ -15,6 +15,10 @@ export class PeopleComponent implements OnInit {
   people = [];
 
   ngOnInit() {
+    this.getAllPeople();
+  }
+
+  getAllPeople(){
     this._peopleService.getDiscover().subscribe(
       response => {
         this.people = response['content'];
@@ -22,6 +26,12 @@ export class PeopleComponent implements OnInit {
         
       }
     )
+  }
+
+  showDetails(person) {
+    console.log(person.id);
+    
+    this._router.navigate(['/people/', person.id]);
   }
 
 }

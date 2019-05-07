@@ -14,6 +14,11 @@ export class MovieService extends BaseService {
   }
 
   getById(id: string) {
-    return this._httpClient.get(`${this.URL}movie/${id}?language=pt-BR`)
+    return this._httpClient.get(`${this.URL}program/movies/${id}`)
   }
+
+  findMovieByTitle(title: string){
+    return this._httpClient.get(`${this.URL}program/movies/title/${title}`)
+  }
+  
 }

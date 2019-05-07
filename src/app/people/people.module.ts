@@ -1,3 +1,4 @@
+import { PeopleDetailComponent } from './people-detail/people-detail.component';
 import { PeopleService } from './people.service';
 import { PeopleRoutingModule } from './people.routing.module';
 import { PeopleComponent } from './people.component';
@@ -6,8 +7,8 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    PeopleComponent
-    //PeopleDetailComponent
+    PeopleComponent,
+    PeopleDetailComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-12 col-md-4">
+    <div class="card">
+      <img class="card-img"
+          src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{ person.backdropPath }}" alt="_blank" />
+    </div>
+  </div>
+  &nbsp;
+  <div class="col-12 col-md-7">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">{{ person?.name }}</h5>                    
+      </div>
+      <div class="card-body">
+        <p><strong>height: </strong> <span>{{ person?.height }}</span></p>
+        <p><strong>hometown:</strong> {{ person?.hometown }}</p>                
+        <p><strong>home Country: </strong> <span>{{ person?.homeCountry }}</span></p>        
+        <p><strong>Gender: </strong> <span>{{ person?.gender }}</span></p>        
+        <div class="d-inline-block">              
+            <button type="button" class="btn btn-primary" [routerLink]="['editar', movie.id, 'movie']">Edit Movie</button>           
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,8 +13,27 @@ export class MovieComponent implements OnInit {
     private _router: Router) { }
 
   movies = [];
+  title: string = "";
+  searches = ["Name", "Language", "Release Year"];
 
   ngOnInit() {
+    this.getAllMovies();
+  }
+
+  findMovieByTitle(title){  
+  
+    this._movieService.findMovieByTitle(title).subscribe(
+      response => {
+        this.movies = response['content'];      
+      }
+    )
+
+    if(title == ""){
+      this.getAllMovies();
+    }
+  }
+
+  getAllMovies(){
     this._movieService.getDiscover().subscribe(
       response => {
         this.movies = response['content'];
@@ -24,9 +43,10 @@ export class MovieComponent implements OnInit {
     )
   }
 
-  goEdit(movie) {
-
-    this._router.navigate(['filmes/detalhes', movie.id])
+  showDetails(movie) {
+    console.log(movie);
+    
+    this._router.navigate(['/movies/', movie.id]);
   }
 
 }

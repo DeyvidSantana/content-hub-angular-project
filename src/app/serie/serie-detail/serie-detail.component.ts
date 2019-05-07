@@ -12,15 +12,16 @@ export class SerieDetailComponent implements OnInit {
   constructor(private _activatedRoute: ActivatedRoute,
     private _serieService: SerieService) { }
 
-  movie = {}
+  tv = {};
+  
   ngOnInit() {
     this._activatedRoute.params.subscribe(params => {
       let id = params['id'];
 
       this._serieService.getById(id)
         .subscribe(response => {
-          this.movie = response;
-          console.log(this.movie);
+          this.tv = response;
+          console.log(this.tv);
           
         })
     });

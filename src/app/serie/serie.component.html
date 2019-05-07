@@ -1,6 +1,6 @@
 <div class="col-12">
   <div class="card-columns">
-    <div class="card bg-dark text-white" (click)="goEdit(serie)" *ngFor="let tv of tvs">
+    <div class="card bg-dark text-white" (click)="showDetails(tv)" *ngFor="let tv of tvs">
       <img class="card-img" 
           src="https://image.tmdb.org/t/p/w250_and_h141_face{{ tv.backdropPath }}" alt="_blank" />
       <div class="card-img-overlay">
