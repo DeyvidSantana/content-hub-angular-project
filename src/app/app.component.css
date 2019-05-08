@@ -1,11 +1,11 @@
 header.navbar {
-    background: linear-gradient(135deg, #0143a3, #0273d4);
-  }
+    background: linear-gradient(135deg, #cecccc, #000000);
+}
 
 .img-logo {
-    width:30px;
+    width:40px;
 }
 
-.card {
+/*.card {
   cursor: pointer;
-}
+}*/

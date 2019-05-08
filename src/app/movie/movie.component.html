@@ -4,13 +4,13 @@
       <div class="col-8">
         <div class="form-group"> 
           <label>Search movies:</label> 
-          <input type="text" (input)="findMovieByTitle($event.target.value)" name="" id="" placeholder="Type your search here..." class="form-control" required="required">
+          <input type="text" (input)="findMovies($event.target.value)" name="" id="" placeholder="Type your search here..." class="form-control" required="required">
         </div>
       </div> 
 
       <div class="col-4">
         <label>Search for:</label>
-        <select name="" id="" class="form-control" required="required">
+        <select (change)="selectOption($event.target.value)" name="select" class="form-control" required="required">
           <option *ngFor="let search of searches" [value]="search">{{ search }}</option>
         </select>      
       </div>

@@ -14,8 +14,18 @@
       <div class="card-body">
         <p><strong>Language: </strong> <span>{{ movie?.language }}</span></p>
         <p class="card-title text-justify"><strong>Overview:</strong> {{ movie?.overview }}</p>                
-        <p><strong>Origin Country: </strong> <span>{{ movie?.originCountry }}</span></p>        
-        <p><strong>Runtime: </strong> <span>{{ movie?.runtime }}</span></p>        
+        <p><strong>Origin Country: </strong> <span>{{ movie?.originCountry }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+          <strong>Runtime: </strong> <span>{{ movie?.runtime }}</span></p> 
+        <p><strong>Genres:</strong></p>  
+        <div class="d-inline-block" *ngFor="let genre of movie?.genres">
+          <span class="badge badge-pill badge-primary">{{ genre }}</span>
+        </div>   
+        <br><br>
+        <p><strong>Cast:</strong></p>  
+        <div class="d-inline-block" *ngFor="let person of movie?.cast">
+          <span class="badge badge-pill badge-primary">{{ person }}</span>
+        </div>   
+        <br><br>   
         <div class="d-inline-block">              
             <button type="button" class="btn btn-primary" [routerLink]="['editar', movie.id, 'movie']">Edit Movie</button>           
         </div>

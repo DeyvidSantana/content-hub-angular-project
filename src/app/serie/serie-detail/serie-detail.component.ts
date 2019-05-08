@@ -17,7 +17,8 @@ export class SerieDetailComponent implements OnInit {
   ngOnInit() {
     this._activatedRoute.params.subscribe(params => {
       let id = params['id'];
-
+      console.log("este id" + id);
+      
       this._serieService.getById(id)
         .subscribe(response => {
           this.tv = response;
