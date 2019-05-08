@@ -1,3 +1,16 @@
+<div class="container"> 
+  <form>
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group"> 
+          <label>Search movies:</label> 
+          <input type="text" (input)="findPeopleByName($event.target.value)" name="" id="" placeholder="Type a name for search here..." class="form-control" required="required">
+        </div>
+      </div>
+    </div>
+  </form>
+</div> 
+
 <div class="col-12">
   <div class="card-columns">
     <div class="card bg-dark text-white" (click)="showDetails(person)" *ngFor="let person of people">

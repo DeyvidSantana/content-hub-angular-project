@@ -20,5 +20,13 @@ export class MovieService extends BaseService {
   findMovieByTitle(title: string){
     return this._httpClient.get(`${this.URL}program/movies/title/${title}`)
   }
+
+  findMovieByLanguage(language: string){
+    return this._httpClient.get(`${this.URL}program/movies/language/${language}`)
+  }
+
+  findMovieByReleaseYear(releaseYear: string){
+    return this._httpClient.get(`${this.URL}program/movies/date/${releaseYear}`)
+  }
   
 }

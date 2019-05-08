@@ -12,9 +12,72 @@ export class SerieComponent implements OnInit {
     private _router: Router) { }
 
   tvs = [];
+  searches = ["Name", "Language", "Release Year"];
+  selectedOption: string = "Name";
 
   ngOnInit() {
     this.getAllTvs();
+  }
+
+  findTvs(condition){
+
+    console.log(condition);
+    
+
+    switch(this.selectedOption){
+
+      case "Name":
+        this.findTvByTitle(condition);      
+        break;
+
+      case "Language":
+        this.findTvByLanguage(condition);      
+        break;
+      
+      case "Release Year":
+        this.findTvByReleaseYear(condition);      
+        break;
+      default:
+        break;
+    }
+
+  }
+
+  findTvByTitle(title){  
+
+    this._serieService.findTvByTitle(title).subscribe(
+      response => {
+        this.tvs = response['content'];      
+      }
+    )
+
+    if(title == ""){
+      this.getAllTvs();
+    }
+  }
+
+  findTvByLanguage(language){
+    this._serieService.findTvByLanguage(language).subscribe(
+      response => {
+        this.tvs = response['content'];      
+      }
+    )
+
+    if(language == ""){
+      this.getAllTvs();
+    }
+  }
+
+  findTvByReleaseYear(releaseYear){
+    this._serieService.findTvByReleaseYear(releaseYear).subscribe(
+      response => {
+        this.tvs = response['content'];      
+      }
+    )
+
+    if(releaseYear == ""){
+      this.getAllTvs();
+    }
   }
 
   goEdit(serie) {
@@ -30,11 +93,12 @@ export class SerieComponent implements OnInit {
     )
   }
 
-  showDetails(tv) {
-    console.log(tv);  
+  showDetails(tv) {    
     this._router.navigate(['/tvs/', tv.id]);
   }
 
+  selectOption(option){
+    this.selectedOption = option;       
+  }
   
-
 }

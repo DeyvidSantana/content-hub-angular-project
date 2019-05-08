@@ -18,6 +18,19 @@ export class PeopleComponent implements OnInit {
     this.getAllPeople();
   }
 
+  findPeopleByName(person){  
+
+    this._peopleService.findPeopleByName(person).subscribe(
+      response => {
+        this.people = response['content'];      
+      }
+    )
+
+    if(person == ""){
+      this.getAllPeople();
+    }
+  }
+
   getAllPeople(){
     this._peopleService.getDiscover().subscribe(
       response => {

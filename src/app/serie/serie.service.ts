@@ -16,4 +16,16 @@ export class SerieService extends BaseService {
   getById(id: string) {
     return this._httpClient.get(`${this.URL}program/tvs/${id}`)
   }
+
+  findTvByTitle(title: string){
+    return this._httpClient.get(`${this.URL}program/tvs/title/${title}`)
+  }
+
+  findTvByLanguage(language: string){
+    return this._httpClient.get(`${this.URL}program/tvs/language/${language}`)
+  }
+
+  findTvByReleaseYear(releaseYear: string){
+    return this._httpClient.get(`${this.URL}program/tvs/date/${releaseYear}`)
+  }
 }

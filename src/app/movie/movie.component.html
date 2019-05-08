@@ -1,4 +1,4 @@
-<div> 
+<div class="container"> 
   <form>
     <div class="row">
       <div class="col-8">
@@ -22,7 +22,7 @@
   <div class="card-columns">
     <div class="card bg-dark text-white" (click)="showDetails(movie)" *ngFor="let movie of movies">
      <img class="card-img"
-          src="https://image.tmdb.org/t/p/w250_and_h141_face{{ movie.backdropPath }}" alt="_blank" />
+          src="https://image.tmdb.org/t/p/w250_and_h141_face{{ movie.backdropPath }}" alt="_blank"/>
       <div class="card-img-overlay">
         <p class="card-title">{{ movie.title }}</p>
       </div>

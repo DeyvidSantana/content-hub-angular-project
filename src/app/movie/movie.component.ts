@@ -22,6 +22,9 @@ export class MovieComponent implements OnInit {
 
   findMovies(condition){
     
+    console.log(this.selectedOption);
+    
+
     switch(this.selectedOption){
 
       case "Name":
@@ -54,10 +57,29 @@ export class MovieComponent implements OnInit {
     }
   }
 
-  findMovieByLanguage(language){console.log("Searching for language...");
+  findMovieByLanguage(language){
+    this._movieService.findMovieByLanguage(language).subscribe(
+      response => {
+        this.movies = response['content'];      
+      }
+    )
+
+    if(language == ""){
+      this.getAllMovies();
+    }
   }
 
-  findMovieByReleaseYear(releaseYear){console.log("Searching for releaseYear...")}
+  findMovieByReleaseYear(releaseYear){
+    this._movieService.findMovieByReleaseYear(releaseYear).subscribe(
+      response => {
+        this.movies = response['content'];      
+      }
+    )
+
+    if(releaseYear == ""){
+      this.getAllMovies();
+    }
+  }
 
   getAllMovies(){
     this._movieService.getDiscover().subscribe(

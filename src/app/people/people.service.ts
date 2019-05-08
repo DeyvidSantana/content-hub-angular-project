@@ -16,4 +16,8 @@ export class PeopleService extends BaseService {
   getById(id: string) {
     return this._httpClient.get(`${this.URL}people/${id}`)
   }
+
+  findPeopleByName(title: string){
+    return this._httpClient.get(`${this.URL}people/name/${title}`)
+  }
 }
