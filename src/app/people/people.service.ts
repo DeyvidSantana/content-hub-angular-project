@@ -20,4 +20,8 @@ export class PeopleService extends BaseService {
   findPeopleByName(title: string){
     return this._httpClient.get(`${this.URL}people/name/${title}`)
   }
+
+  updatePerson(id, person){
+    return this._httpClient.put(`${this.URL}people/${id}`, person);
+  }
 }

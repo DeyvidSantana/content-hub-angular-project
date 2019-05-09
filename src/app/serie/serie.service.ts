@@ -28,4 +28,8 @@ export class SerieService extends BaseService {
   findTvByReleaseYear(releaseYear: string){
     return this._httpClient.get(`${this.URL}program/tvs/date/${releaseYear}`)
   }
+
+  updateTv(id, tv){
+    return this._httpClient.put(`${this.URL}program/update/tv/${id}`, tv);
+  }
 }

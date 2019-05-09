@@ -1,3 +1,55 @@
-<p>
-  person-edit works!
-</p>
+<div class="container">
+		
+			<form (ngSubmit)="onFormSubmit(personEditForm)" #personEditForm="ngForm">
+			
+				<legend>{{ person.name }}</legend>
+			
+				<div class="row">
+					<div class="col-lg-7 col-md-7 col-sm-8">
+						<div class="form-group">
+							<label for="">Name</label>
+							<input type="" class="form-control" id="" [(ngModel)]="person.name" name="name">
+						</div>
+					</div>
+					<div class="col-lg-5 col-md-5 col-sm-4">
+						<div class="form-group">
+							<label for="">Heigth</label>
+							<input type="" class="form-control" id="" [(ngModel)]="person.height" name="height">
+						</div>
+					</div>					
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<div class="form-group">
+							<label for="">Hometown:</label>
+							<input type="" class="form-control" id="" [(ngModel)]="person.hometown" name="hometown">
+						</div>
+					</div>				
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<div class="form-group">
+							<label for="">Home Country:</label>
+							<input type="" class="form-control" id="" [(ngModel)]="person.homeCountry" name="homeCountry">
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<div class="form-group">
+							<label for="">Gender:</label>
+							<select class="form-control" id="sel1">
+								<option>None</option>
+								<option>Male</option>
+								<option>Female</option>
+							 </select>
+						</div>
+					</div>
+				</div>				
+				
+				<div class="row">
+					<div class="col-3">
+						<input type="submit" class="form-control btn btn-success" id="" value="Edit Program">
+					</div>
+				</div>
+				
+			</form>
+		
+		
+		</div>

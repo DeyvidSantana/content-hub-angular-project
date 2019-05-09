@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { MovieComponent } from './movie.component';
 import { MovieRoutingModule } from './movie.routing.module';
 import { MovieService } from './movie.service';
+import { FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MovieService } from './movie.service';
   ],
   imports: [
     CommonModule,
-    MovieRoutingModule
+    MovieRoutingModule,
+    FormsModule
   ],
   providers:[
     MovieService

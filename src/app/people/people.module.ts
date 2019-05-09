@@ -5,6 +5,7 @@ import { PeopleRoutingModule } from './people.routing.module';
 import { PeopleComponent } from './people.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CommonModule } from '@angular/common';
   ],
   imports: [
     CommonModule,
-    PeopleRoutingModule
+    PeopleRoutingModule,
+    FormsModule
   ],
   providers: [
     PeopleService

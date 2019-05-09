@@ -15,9 +15,10 @@
   <div class="card-columns">
     <div class="card bg-dark text-white" (click)="showDetails(person)" *ngFor="let person of people">
       <img class="card-img" 
-          src="https://image.tmdb.org/t/p/w250_and_h141_face{{ person?.profilePath }}" alt="_blank" />
+          src="https://image.tmdb.org/t/p/w250_and_h141_face{{ person?.profilePath }}" 
+            onerror="this.src='./../../assets/default-staff-2.jpg'" alt="_blank" />
       <div class="card-img-overlay">
-        <p class="card-title">{{ person.name }}</p>
+        <p class="card-title"><mark>{{ person.name }}</mark></p>
       </div>
     </div>
   </div>

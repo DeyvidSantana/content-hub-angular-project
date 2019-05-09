@@ -1,3 +1,66 @@
-<p>
-  movie-edit works!
-</p>
+<div class="container">
+		
+			<form (ngSubmit)="onFormSubmit(movieEditForm)" #movieEditForm="ngForm">
+				
+				<legend>{{ movie.title }}</legend>
+			
+				<div class="row">
+					<div class="col-lg-7 col-md-7 col-sm-8">
+						<div class="form-group">
+							<label for="">Title</label>
+							<input type="" class="form-control" id="" [(ngModel)]="movie.title" name="title">
+						</div>
+					</div>
+					<div class="col-lg-5 col-md-5 col-sm-4">
+						<div class="form-group">
+							<label for="">Language</label>
+							<input type="" class="form-control" id="" [(ngModel)]="movie.language" name="language">
+						</div>
+					</div>					
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="form-group">
+						  <label for="">Overview:</label>
+						  <textarea class="form-control" rows="3" id="" [(ngModel)]="movie.overview" name="overview"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<div class="form-group">
+							<label for="">Origin Contry:</label>
+							<input type="" class="form-control" id="" [(ngModel)]="movie.originCountry" name="originCountry">
+						</div>
+					</div>				
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<div class="form-group">
+							<label for="">Release Year:</label>
+							<input type="" class="form-control" id="" [(ngModel)]="movie.releaseDate" name="releaseDate">
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4">
+						<div class="form-group">
+							<label for="">Runtime:</label>
+							<input type="" class="form-control" id="" [(ngModel)]="movie.runtime" name="runtime">
+						</div>
+					</div>
+				</div>
+				<div>
+					<label>Genres:</label><br>					
+					<div>
+						<input type="checkbox" id="defaultCheck" name="example2">
+						<label for="defaultCheck">Action</label>
+					</div>					
+					<br>
+				</div> 
+				
+				<div class="row">
+					<div class="col-3">
+						<input type="submit" class="form-control btn btn-success" id="" value="Edit Program">
+					</div>
+				</div>
+				
+			</form>
+		
+</div>

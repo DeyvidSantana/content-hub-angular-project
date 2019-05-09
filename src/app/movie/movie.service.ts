@@ -28,5 +28,9 @@ export class MovieService extends BaseService {
   findMovieByReleaseYear(releaseYear: string){
     return this._httpClient.get(`${this.URL}program/movies/date/${releaseYear}`)
   }
+
+  updateMovie(id, movie){
+    return this._httpClient.put(`${this.URL}program/update/movie/${id}`, movie);
+  }
   
 }

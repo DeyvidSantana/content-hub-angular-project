@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { SerieEditComponent } from './serie-edit/serie-edit.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,7 +15,8 @@ import { SerieService } from './serie.service';
   ],
   imports: [
     CommonModule,
-    SerieRoutingModule
+    SerieRoutingModule,
+    FormsModule
   ],
   providers: [
     SerieService

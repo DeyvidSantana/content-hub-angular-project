@@ -1,36 +1,37 @@
 <div class="row">
   <div class="col-12 col-md-4">
     <div class="card">
-      <img class="card-img"
-          src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{ movie.backdropPath }}" alt="_blank" class="img-thumbnail"/>
+      <img class="card-img" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{ movie.backdropPath }}" alt="_blank" class="img-thumbnail"
+      />
     </div>
   </div>
   &nbsp;
   <div class="col-12 col-md-7">
     <div class="card">
       <div class="card-header">
-        <h5 class="card-title">{{ movie?.title }} ({{ movie?.releaseDate | date: 'yyyy'}})</h5>                    
+        <h5 class="card-title">{{ movie?.title }} ({{ movie?.releaseDate | date: 'yyyy'}})</h5>
       </div>
-      <div class="card-body">        
-        <p class="card-title text-justify"><strong>Overview:</strong> {{ movie?.overview }}</p>                
+      <div class="card-body">
+        <p class="card-title text-justify"><strong>Overview:</strong> {{ movie?.overview }}</p>
         <p><strong>Origin Country: </strong> <span>{{ movie?.originCountry }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
           <strong>Runtime: </strong> <span>{{ movie?.runtime }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
-          <strong>Language: </strong> <span>{{ movie?.language }}</span></p> 
-        <p><strong>Genres:</strong></p>  
+          <strong>Language: </strong> <span>{{ movie?.language }}</span></p>
+        <p><strong>Genres:</strong></p>
         <div class="d-inline-block" *ngFor="let genre of movie?.genres">
           <span class="badge badge-pill badge-primary">{{ genre }}</span>
-        </div>   
+        </div>
         <br><br>
         <p><strong>Cast:</strong></p>
-        <div class="col-12"> 
+        <div class="col-12">
           <div class="row">
             <div *ngFor="let person of movie?.cast">
-              <img src="https://image.tmdb.org/t/p/original{{ person }}" alt="_blank" class="img rounded-circle"/>  
+              <img src="https://image.tmdb.org/t/p/original{{ person }}" alt="_blank" class="img rounded-circle" />
             </div>
-          </div>           
-        </div><br>        
-        <div class="d-inline-block">              
-            <button type="button" class="btn btn-primary" [routerLink]="['/movies/edit/', movie.id]">Edit Movie</button>           
+          </div>
+        </div><br>
+        <div class="d-inline-block">
+          <button type="button" class="btn btn-primary" [routerLink]="['/movies/edit/', movie.id]">Edit Movie</button>&nbsp;&nbsp;
+          <button type="button" class="btn btn-danger">Delete Movie</button>
         </div>
       </div>
     </div>
