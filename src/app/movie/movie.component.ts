@@ -92,8 +92,6 @@ export class MovieComponent implements OnInit {
   }
 
   showDetails(movie) {
-    console.log(movie);
-    
     this._router.navigate(['/movies/', movie.id]);
   }
 

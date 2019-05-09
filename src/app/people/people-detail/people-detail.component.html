@@ -17,7 +17,7 @@
         <p><strong>Home Country: </strong> <span>{{ person?.homeCountry }}</span></p>        
         <p><strong>Gender: </strong> <span>{{ person?.gender }}</span></p>        
         <div class="d-inline-block">              
-            <button type="button" class="btn btn-primary" [routerLink]="['editar', person.id, 'person']">Edit Person</button>           
+            <button type="button" class="btn btn-primary" [routerLink]="['/people/edit/', person.id]">Edit Person</button>           
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import { SerieEditComponent } from './serie-edit/serie-edit.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SerieRoutingModule } from './serie.routing.module';
@@ -8,7 +9,8 @@ import { SerieService } from './serie.service';
 @NgModule({
   declarations: [
     SerieComponent,
-    SerieDetailComponent
+    SerieDetailComponent,
+    SerieEditComponent
   ],
   imports: [
     CommonModule,

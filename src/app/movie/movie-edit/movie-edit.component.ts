@@ -1,20 +1,19 @@
-import { Router } from '@angular/router';
-import { MovieService } from '../movie.service';
-import { Component, OnInit } from '@angular/core';
+import { MovieService } from './../movie.service';
 import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-movie-detail',
-  templateUrl: './movie-detail.component.html',
-  styleUrls: ['./movie-detail.component.css']
+  selector: 'app-movie-edit',
+  templateUrl: './movie-edit.component.html',
+  styleUrls: ['./movie-edit.component.css']
 })
-export class MovieDetailComponent implements OnInit {
+export class MovieEditComponent implements OnInit {
 
   constructor(private _activatedRoute: ActivatedRoute,    
     private _movieService: MovieService) { }
-    
+
   movie = {};
-  
+
   ngOnInit() {
     this._activatedRoute.params.subscribe(params => {
       let id = params['id'];
@@ -22,10 +21,9 @@ export class MovieDetailComponent implements OnInit {
       this._movieService.getById(id)
         .subscribe(response => {
           this.movie = response; 
-          console.log(this.movie);                   
+          console.log(this.movie + "aeeeee");                   
         })
     });
-    
   }
 
 }

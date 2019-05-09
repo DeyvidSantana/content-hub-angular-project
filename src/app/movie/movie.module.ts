@@ -1,3 +1,4 @@
+import { MovieEditComponent } from './movie-edit/movie-edit.component';
 import { AppRoutingModule } from './../app-routing.module';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,8 @@ import { MovieService } from './movie.service';
 @NgModule({
   declarations: [
     MovieComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    MovieEditComponent  
   ],
   imports: [
     CommonModule,
