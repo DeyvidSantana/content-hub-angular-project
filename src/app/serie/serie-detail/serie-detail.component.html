@@ -9,7 +9,7 @@
   <div class="col-12 col-md-7">
     <div class="card">
       <div class="card-header">
-        <h5 class="card-title">{{ tv?.title }} ({{ tv?.releaseDate | date: 'yyyy'}})</h5>
+        <h5 class="card-title">{{ tv?.title }} ({{ tv?.releaseDate }})</h5>
       </div>
       <div class="card-body">                       
         <p class="card-title text-justify"><strong>Overview:</strong> {{ tv?.overview }}</p>                
@@ -32,7 +32,7 @@
         </div><br>
         <div class="d-inline-block">              
             <button type="button" class="btn btn-primary" [routerLink]="['/tvs/edit/', tv.id]">Edit TV</button>&nbsp;&nbsp;
-            <button type="button" class="btn btn-danger">Delete TV</button>           
+            <button type="button" class="btn btn-danger" (click)="deleteTv(tv.id)">Delete TV</button>           
         </div>
       </div>
     </div>

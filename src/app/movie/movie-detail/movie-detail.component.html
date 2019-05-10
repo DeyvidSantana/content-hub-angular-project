@@ -9,7 +9,7 @@
   <div class="col-12 col-md-7">
     <div class="card">
       <div class="card-header">
-        <h5 class="card-title">{{ movie?.title }} ({{ movie?.releaseDate | date: 'yyyy'}})</h5>
+        <h5 class="card-title">{{ movie?.title }} ({{ movie?.releaseDate }})</h5>
       </div>
       <div class="card-body">
         <p class="card-title text-justify"><strong>Overview:</strong> {{ movie?.overview }}</p>
@@ -25,13 +25,14 @@
         <div class="col-12">
           <div class="row">
             <div *ngFor="let person of movie?.cast">
-              <img src="https://image.tmdb.org/t/p/original{{ person }}" alt="_blank" class="img rounded-circle" />
+              <img src="https://image.tmdb.org/t/p/original{{ person }}" 
+              onerror="this.src='./../../assets/default-staff-3.jpg'" alt="_blank" class="img rounded-circle" />
             </div>
           </div>
         </div><br>
         <div class="d-inline-block">
           <button type="button" class="btn btn-primary" [routerLink]="['/movies/edit/', movie.id]">Edit Movie</button>&nbsp;&nbsp;
-          <button type="button" class="btn btn-danger">Delete Movie</button>
+          <button type="button" class="btn btn-danger" (click)="deleteMovie(movie.id)">Delete Movie</button>
         </div>
       </div>
     </div>

@@ -27,8 +27,6 @@ export class SerieEditComponent implements OnInit {
       this._serieService.getById(id)
         .subscribe(response => {
           this.tv = response; 
-          console.log(this.tv);
-                            
         })
     });
 
@@ -44,27 +42,31 @@ export class SerieEditComponent implements OnInit {
 
   }
 
-  public onFormSubmit(tv){
+  public onFormSubmit(tv){   
+
+    let saveConfirm = confirm("Do you really want to save changes of this tv serie?");
+
+    if(saveConfirm){
+      this.buildTvUpdated(tv);    
     
-    this.buildTvUpdated(tv);    
-    
-    this._serieService.updateTv(this.idTv, this.tvUpdated)
-        .subscribe(response => { 
-          alert("TV updated successfully.");
-          this.location.back();                  
-    })
+      this._serieService.updateTv(this.idTv, this.tvUpdated)
+          .subscribe(response => { 
+            alert("TV updated successfully.");
+            this.location.back();                  
+      })
+    }
 
   }
 
   buildTvUpdated(tv){
-    
+
       this.tvUpdated.title = tv.form.controls.title.value,
       this.tvUpdated.language = tv.form.controls.language.value,
       this.tvUpdated.overview = tv.form.controls.overview.value,
 	    this.tvUpdated.originCountry = tv.form.controls.originCountry.value,
       this.tvUpdated.releaseDate = tv.form.controls.releaseDate.value,
-	    this.tvUpdated.runtime = tv.form.controls.runtime.value
-      //this.tvUpdated.seansons = tv.form.controls.seansons.value
+	    this.tvUpdated.runtime = tv.form.controls.runtime.value,
+      this.tvUpdated.seansons = tv.form.controls.seansons.value
     
   }
 }

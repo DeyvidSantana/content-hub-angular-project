@@ -8,13 +8,13 @@
 					<div class="col-lg-7 col-md-7 col-sm-8">
 						<div class="form-group">
 							<label for="">Name</label>
-							<input type="" class="form-control" id="" [(ngModel)]="person.name" name="name">
+							<input type="text" class="form-control" [(ngModel)]="person.name" name="name">
 						</div>
 					</div>
 					<div class="col-lg-5 col-md-5 col-sm-4">
 						<div class="form-group">
 							<label for="">Heigth</label>
-							<input type="" class="form-control" id="" [(ngModel)]="person.height" name="height">
+							<input type="text" class="form-control" [(ngModel)]="person.height" name="height">
 						</div>
 					</div>					
 				</div>
@@ -22,22 +22,22 @@
 					<div class="col-lg-4 col-md-4 col-sm-4">
 						<div class="form-group">
 							<label for="">Hometown:</label>
-							<input type="" class="form-control" id="" [(ngModel)]="person.hometown" name="hometown">
+							<input type="text" class="form-control" [(ngModel)]="person.hometown" name="hometown">
 						</div>
 					</div>				
 					<div class="col-lg-4 col-md-4 col-sm-4">
 						<div class="form-group">
 							<label for="">Home Country:</label>
-							<input type="" class="form-control" id="" [(ngModel)]="person.homeCountry" name="homeCountry">
+							<input type="text" class="form-control" [(ngModel)]="person.homeCountry" name="homeCountry">
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-4">
 						<div class="form-group">
 							<label for="">Gender:</label>
-							<select class="form-control" id="sel1">
-								<option>None</option>
-								<option>Male</option>
-								<option>Female</option>
+							<select class="form-control" [(ngModel)]="person.gender" name="gender">
+								<option value="O">Other</option>								
+								<option value="F">Female</option>
+								<option value="M">Male</option>
 							 </select>
 						</div>
 					</div>
@@ -45,7 +45,7 @@
 				
 				<div class="row">
 					<div class="col-3">
-						<input type="submit" class="form-control btn btn-success" id="" value="Edit Program">
+						<input type="submit" class="form-control btn btn-success" value="Save changes">
 					</div>
 				</div>
 				

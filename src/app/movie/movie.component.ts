@@ -21,9 +21,6 @@ export class MovieComponent implements OnInit {
   }
 
   findMovies(condition){
-    
-    console.log(this.selectedOption);
-    
 
     switch(this.selectedOption){
 
@@ -85,8 +82,6 @@ export class MovieComponent implements OnInit {
     this._movieService.getDiscover().subscribe(
       response => {
         this.movies = response['content'];
-        console.log(this.movies);
-        
       }
     )
   }
@@ -96,8 +91,7 @@ export class MovieComponent implements OnInit {
   }
 
   selectOption(option){
-    this.selectedOption = option;    
-    console.log(this.selectedOption);    
+    this.selectedOption = option;       
   }
 
 }

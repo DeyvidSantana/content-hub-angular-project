@@ -32,4 +32,8 @@ export class SerieService extends BaseService {
   updateTv(id, tv){
     return this._httpClient.put(`${this.URL}program/update/tv/${id}`, tv);
   }
+
+  deleteTv(id){
+    return this._httpClient.delete(`${this.URL}program/delete/tv/${id}`);
+  }
 }

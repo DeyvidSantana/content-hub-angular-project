@@ -32,5 +32,9 @@ export class MovieService extends BaseService {
   updateMovie(id, movie){
     return this._httpClient.put(`${this.URL}program/update/movie/${id}`, movie);
   }
+
+  deleteMovie(id){
+    return this._httpClient.delete(`${this.URL}program/delete/movie/${id}`);
+  }
   
 }

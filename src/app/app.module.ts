@@ -1,7 +1,6 @@
 import { PeopleService } from './people/people.service';
 import { SerieService } from './serie/serie.service';
 import { MovieService } from './movie/movie.service';
-import { EditComponent } from './edit/edit.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,8 +19,7 @@ import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    EditComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,

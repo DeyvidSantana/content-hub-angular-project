@@ -24,4 +24,8 @@ export class PeopleService extends BaseService {
   updatePerson(id, person){
     return this._httpClient.put(`${this.URL}people/${id}`, person);
   }
+
+  deletePerson(id){
+    return this._httpClient.delete(`${this.URL}people/${id}`);
+  }
 }

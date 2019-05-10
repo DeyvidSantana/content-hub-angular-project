@@ -27,8 +27,6 @@ export class MovieEditComponent implements OnInit {
       this._movieService.getById(id)
         .subscribe(response => {
           this.movie = response; 
-          console.log(this.movie);
-                            
         })
     });
 
@@ -46,13 +44,17 @@ export class MovieEditComponent implements OnInit {
 
   public onFormSubmit(movie){
     
-    this.buildMovieUpdated(movie);    
+    let saveConfirm = confirm("Do you really want to save changes of this movie?");
+
+    if(saveConfirm){
+      this.buildMovieUpdated(movie);    
     
-    this._movieService.updateMovie(this.idMovie, this.movieUpdated)
-        .subscribe(response => { 
-          alert("Movie updated successfully.");
-          this.location.back();          
-    })
+      this._movieService.updateMovie(this.idMovie, this.movieUpdated)
+          .subscribe(response => { 
+            alert("Movie updated successfully.");
+            this.location.back();          
+      })
+    }
     
   }
 

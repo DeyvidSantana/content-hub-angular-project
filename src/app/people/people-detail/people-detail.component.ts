@@ -1,6 +1,7 @@
 import { PeopleService } from './../people.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-people-detail',
@@ -11,7 +12,8 @@ export class PeopleDetailComponent implements OnInit {
 
   constructor(private _activatedRoute: ActivatedRoute,
     private _router: Router,
-    private _peopleService: PeopleService) { }
+    private _peopleService: PeopleService,
+    private location: Location) { }
 
   person = {};
 
@@ -21,10 +23,22 @@ export class PeopleDetailComponent implements OnInit {
 
       this._peopleService.getById(id)
         .subscribe(response => {
-          this.person = response; 
-          console.log(this.person);                   
+          this.person = response;                    
         })
     });
+  }
+
+  deletePerson(idPerson){  
+    
+    let deleteConfirm = confirm("Do you really want to delete this person?");
+
+    if(deleteConfirm){
+      this._peopleService.deletePerson(idPerson)
+        .subscribe(response => {
+          alert("Person deleted successfully.");  
+          this.location.back();               
+      })
+    }
   }
 
 }

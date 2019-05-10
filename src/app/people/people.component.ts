@@ -35,15 +35,11 @@ export class PeopleComponent implements OnInit {
     this._peopleService.getDiscover().subscribe(
       response => {
         this.people = response['content'];
-        console.log(this.people);
-        
       }
     )
   }
 
   showDetails(person) {
-    console.log(person.id);
-    
     this._router.navigate(['/people/', person.id]);
   }
 
